@@ -1,0 +1,87 @@
+[2022-09-06 14:02:11.745][DEBUG] [Thread-628] (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) () () (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) SessionManager has not the taskId. - (SessionManager.java:211)
+[2022-09-06 14:02:11.745][DEBUG] [Thread-628] (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) () () (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) Get a new Engine-ID. (0) - (SessionManager.java:213)
+[2022-09-06 14:02:11.745][DEBUG] [Thread-628] (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) () () (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) Success to get the Engine-ID. (0) - (SessionManager.java:225)
+[2022-09-06 14:02:11.745][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) () () (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) Engine-0 is allocated to the task. - (SessionManager.java:238)
+[2022-09-06 14:02:11.746][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) () () Success to add the call. - (TaskInfo.java:68)
+[2022-09-06 14:02:11.746][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) () () (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) New Task. (engineId=0, count=1) - (SessionManager.java:246)
+[2022-09-06 14:02:11.746][DEBUG] [Thread-628] () () () (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) taskInfo.setTaskState: [INIT] > [READY] - (TaskInfo.java:154)
+[2022-09-06 14:02:11.746][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) Cur Call Count: [1] - (RmqOfferReqHandler.java:264)
+[2022-09-06 14:02:11.749][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) Success to get RTP port(=20000) resource in Queue. - (ResourceManager.java:94)
+[2022-09-06 14:02:11.749][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) Success to allocate the RTP port. (port=20000) - (SessionManager.java:112)
+[2022-09-06 14:02:11.775][DEBUG] [Thread-628] () () () AMF SDP=
+v=0
+o=- 1662440531750 0 IN IP4 50.1.26.16
+s=-
+c=IN IP4 50.1.26.16
+t=0 0
+m=audio 20000 RTP/AVP 96 97 101 102
+a=rtpmap:96 AMR-WB/16000/1
+a=fmtp:96 mode-set=5; octet-align=1
+a=rtpmap:97 AMR/8000/1
+a=fmtp:97 mode-set=7; octet-align=1
+a=rtpmap:101 telephone-event/16000
+a=fmtp:101 0-16
+a=rtpmap:102 telephone-event/8000
+a=fmtp:102 0-16
+a=ptime:20
+a=sendrecv
+a=direction:active
+ - (UserConfig.java:396)
+[2022-09-06 14:02:11.775][DEBUG] [Thread-628] (AMF_CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) () () Media port is changed. (20000 > 20000) - (Sdp.java:264)
+[2022-09-06 14:02:11.775][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) New call is registered. (total=1) - (SessionManager.java:127)
+[2022-09-06 14:02:11.776][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) callInfo.setCallState: [INIT] > [INIT] - (CallInfo.java:419)
+[2022-09-06 14:02:11.778][INFO ] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) C_AMF_0->C_A2S:offer_res/Unknown call type is detected. json=[{
+  "header": {
+    "type": "offer_res",
+    "msgFrom": "C_AMF_0",
+    "transactionId": "e0b99361-97b4-4976-8318-a285a5d79223",
+    "reason": "Unknown call type is detected.",
+    "reasonCode": 3009
+  },
+  "body": {
+    "in_out_flag": 1,
+    "taskId": "task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A",
+    "callId": "CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13"
+  }
+}] - (RmqOutgoingMessage.java:86)
+[2022-09-06 14:02:11.778][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) Free AMR License. - (SessionManager.java:153)
+[2022-09-06 14:02:11.778][DEBUG] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) The call is deleted. (rest=0) - (SessionManager.java:167)
+[2022-09-06 14:02:11.780][INFO ] [Thread-628] () () () Event Level [MIN], msg [SDP offer error [Fail to handle sdp (empty or unsupported)] (task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A) (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13)] - (EventManager.java:63)
+[2022-09-06 14:02:11.780][WARN ] [Thread-628] (CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13) (01047090008) (01020449016) Fail to create call. (json=[{
+  "header": {
+    "type": "offer_req",
+    "transactionId": "e0b99361-97b4-4976-8318-a285a5d79223",
+    "msgFrom": "C_A2S",
+    "reasonCode": 0,
+    "timestamp": "2022-09-06 14:02:11.893"
+  },
+  "body": {
+    "from_no": "01047090008",
+    "to_no": "01020449016",
+    "in_out_flag": 1,
+    "licenseEnable": "true",
+    "callType": 2,
+    "taskId": "task-cc2808dc-41fb-4117-990d-692a36f96ef7.S_TASKENGINE_01_A",
+    "callId": "CACS_A_8f2bbfbbea57f53f74dbfae2d81d0a06@50.1.26.13"
+  }
+}]) - (RmqOfferReqHandler.java:121)
+[2022-09-06 14:02:12.032][DEBUG] [pool-5-thread-3] | HA=[ACTIVE] | Task=1 | Call=0 | [AMR=10000, EVS=9999 (idle)] | EngineIdCount= 1 0 0 0 0 0 - (HaHandler.java:36)
+[2022-09-06 14:03:01.350][INFO ] [Thread-1131] (CACS_A_665b653c39288f10fa3b2dfc48fa68e1@50.1.26.13) (01047090008) (01020449016) (task-9cfc2c90-af8e-4659-a233-4fa6cae65617.S_TASKENGINE_01_B) AMF<-C_A2S:offer_req/null json=[{
+  "header": {
+    "type": "offer_req",
+    "transactionId": "6cb9fbfb-9e0c-4d7f-ab97-7737b2a293c8",
+    "msgFrom": "C_A2S",
+    "reasonCode": 0,
+    "timestamp": "2022-09-06 14:03:01.506"
+  },
+  "body": {
+    "from_no": "01047090008",
+    "to_no": "01020449016",
+    "in_out_flag": 1,
+    "licenseEnable": "true",
+    "callType": 2,
+    "taskId": "task-9cfc2c90-af8e-4659-a233-4fa6cae65617.S_TASKENGINE_01_B",
+    "callId": "CACS_A_665b653c39288f10fa3b2dfc48fa68e1@50.1.26.13"
+  }
+}] - (RmqConsumer.java:154)
+[2022-09-06 14:03:01.351][DEBUG] [Thread-1131] (task-9cfc2c90-af8e-4659-a233-4fa6cae65617.S_TASKENGINE_01_B) () () (CACS_A_665b653c39288f10fa3b2dfc48fa68e1@50.1.26.13) SessionManager has not the taskId. - (SessionManager.java:211)
