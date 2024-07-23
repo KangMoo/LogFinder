@@ -1,5 +1,6 @@
 package com.github.kangmoo;
 
+import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 
 import java.io.IOException;
@@ -8,27 +9,38 @@ import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
+
+import static org.kohsuke.args4j.OptionHandlerFilter.ALL;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Config config = new Config();
         CmdLineParser parser = new CmdLineParser(config);
-        parser.parseArgument(args);
-
+        try {
+            parser.parseArgument(args);
+        } catch (CmdLineException e) {
+            System.err.println(e.getMessage());
+            System.err.println("LogFinder [options...] arguments...");
+            parser.printUsage(System.err);
+            System.err.println();
+            System.err.println("  Example: LogFinder" + parser.printExample(ALL));
+            return;
+        }
         List<String> results;
 
         Pattern findPattern = Pattern.compile(config.getFindPattern());
 
         if (Files.isDirectory(Path.of(config.getFilePath()))) {
-            results = Files.walk(Path.of(config.getFilePath()))
-                    .filter(Files::isRegularFile)
-                    .sorted()
-                    .parallel()
-                    .map(o -> findLogs(o, config.getSplitPattern(), findPattern))
-                    .flatMap(List::stream)
-                    .toList();
+            try (Stream<Path> walk = Files.walk(Path.of(config.getFilePath()))) {
+                results = walk.filter(Files::isRegularFile)
+                        .sorted()
+                        .parallel()
+                        .map(o -> findLogs(o, config.getSplitPattern(), findPattern))
+                        .flatMap(List::stream)
+                        .toList();
+            }
         } else {
-
             results = findLogs(Path.of(config.getFilePath()), config.getSplitPattern(), findPattern);
         }
 

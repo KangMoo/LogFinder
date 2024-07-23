@@ -12,12 +12,12 @@ import java.util.List;
  */
 @Data
 public class Config {
-    @Option(name = "-f", aliases = "--file", usage = "Log file path", required = true)
+    @Option(name = "-f", usage = "Log file path", required = true)
     private String filePath;
 
-    @Option(name = "-p", aliases = "--pattern", usage = "Pattern to Split")
+    @Option(name = "-sp", usage = "Pattern to Split")
     private String splitPattern = "(?=\\[\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}\\])";
 
-    @Option(name = "-r", aliases = "--regex", usage = "Pattern to find")
+    @Option(name = "-p", usage = "Pattern to find")
     private String findPattern = ".*";
 }
